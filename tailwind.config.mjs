@@ -12,7 +12,6 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        Monts: ['Montserrat'],
         Cormo: ['Cormorant Garamond', 'serif'],
       },
     },
