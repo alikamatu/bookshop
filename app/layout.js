@@ -18,12 +18,6 @@ const fontPoppins = Poppins ({
   weight: ["400", "500", "600", "700"],
 })
 
-const montserratFont = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["400", "500", "600", "700"],
-});
-
 const cormorantFont = Cormorant_Garamond ({
   subsets: ["latin"],
   variable: "--font-cormorant",
