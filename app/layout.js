@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${fontPoppins.variable} ${cormorantFont.variable} ${montserratFont.variable} ${geistMono.variable} antialiased flex flex-col  justify-center items-center`}
+        className={`${geistSans.variable} ${fontPoppins.variable} ${cormorantFont.variable} ${geistMono.variable} antialiased flex flex-col  justify-center items-center`}
       >
         <Navbar />
         {children}
