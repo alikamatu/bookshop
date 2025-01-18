@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Geist, Geist_Mono, Montserrat, Poppins } from "next/font/google";
+import { Cormorant_Garamond, Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
