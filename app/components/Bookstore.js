@@ -74,11 +74,11 @@ export default function Bookstore({ filters }) {
 
     return (
         <div className="flex w-full justify-center items-center">
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4">
                 {sortedBooks.map((book, index) => (
                     <div
                         key={index}
-                        className="flex flex-col items-center justify-between bg-[#731212] text-white border rounded-md shadow-md w-[280px]"
+                        className="flex flex-col items-center justify-between bg-[#731212] text-white border rounded-lg shadow-md w-[195px] md:w-[270px] p-[1px]"
                         onMouseEnter={() => setHoveredBookIndex(index)}
                         onMouseLeave={() => setHoveredBookIndex(null)}
                         onClick={() => handleBookClick(book)}
@@ -87,9 +87,9 @@ export default function Bookstore({ filters }) {
                             <img
                                 src={hoveredBookIndex === index ? book.images[1] : book.images[0]}
                                 alt={book.title}
-                                className="w-full h-72 object-cover mb-4 duration-300"
+                                className="w-full h-48 md:h-64 object-cover mb-4 duration-300"
                             />
-                            <h2 className="text-l">{book.title}</h2>
+                            <h2 className="text-l text-center">{book.title}</h2>
                             <p className="mb-2">{book.price}</p>
                         </div>
                         <div className="flex w-full justify-center items-center">
@@ -108,13 +108,13 @@ export default function Bookstore({ filters }) {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
-                     className="modal-content bg-white rounded-lg shadow-lg p-6 md:h-3/4 w-full max-w-6xl relative overflow-y-scroll">
+                     className="modal-content bg-white rounded-lg shadow-lg mx-4 p-6 h-[95vh] md:h-3/4 w-full max-w-6xl relative overflow-y-scroll">
 
                         <div className="md:flex w-full justify-center items-center">
                             <div className="flex w-full justify-center items-center">
-                            <img src={selectedBook.images[0]} alt={selectedBook.title} className="md:[40%] flex justify-center items-center w-[70%] h-auto object-cover rounded-md" />
+                            <img src={selectedBook.images[0]} alt={selectedBook.title} className="flex justify-center items-center w-[100%] h-auto object-cover rounded-md" />
                             </div>
-                            <div className="ml-6 flex flex-col w-[100%] md:px-8">
+                            <div className="md:ml-6 flex flex-col w-[100%] md:px-8">
                                 <div>
                                     <h2 className="text-5xl font-Cormo mb-2">{selectedBook.title}</h2>
                                     <p className="text-3xl font-Cormo mb-2">{selectedBook.price}</p>
