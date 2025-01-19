@@ -1,15 +1,21 @@
 "use client"
-import { ChevronDown, ChevronUp, Search, ShoppingBag, User } from "lucide-react";
+import { ChevronDown, ChevronUp, Search, ShoppingBag, User, Menu } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from 'next/link';
+import MobileMenu from './MobileMenu';
 
 export default function Navbar() {
     const [isAccessoriesDropdownOpen, setIsAccessoriesDropdownOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const dropdownRef = useRef(null);
 
     const toggleAccessoriesDropdown = () => {
         setIsAccessoriesDropdownOpen(!isAccessoriesDropdownOpen);
+    };
+
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
     const handleClickOutside = (event) => {
@@ -26,10 +32,10 @@ export default function Navbar() {
     }, []);
 
     return (
-        <div className="flex w-full justify-between items-center p-6 bg-white">
+        <div className="flex w-full justify-between items-center p-6 bg-white sticky top-0 z-50">
             <div className="flex gap-5 justify-center items-center">
                 <img src="/assets/logo.webp" className="w-14 h-14" alt="" />
-                <div className="flex gap-3">
+                <div className="hidden md:flex gap-3">
                     <Link href="/" className="hover:underline cursor-pointer">Home</Link>
                     <p className="flex gap-2 hover:underline cursor-pointer">Shop Books <ChevronDown /></p>
                     <div className="relative" ref={dropdownRef}>
@@ -57,10 +63,12 @@ export default function Navbar() {
                 </div>
             </div>
             <div className="flex gap-4">
-                <Search />
-                <User />
-                <ShoppingBag />
+                <Search className="hidden md:block" />
+                <User className="hidden md:block" />
+                <ShoppingBag className="hidden md:block" />
+                <Menu className="md:hidden cursor-pointer" onClick={toggleMobileMenu} />
             </div>
+            <MobileMenu isOpen={isMobileMenuOpen} toggleMenu={toggleMobileMenu} />
         </div>
     );
 }

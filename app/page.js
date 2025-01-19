@@ -1,21 +1,14 @@
 "use client"
-import { useState } from "react";
-import Bookstore from "./components/Bookstore";
-import Filter from "./components/Filter";
+import Landing from "./components/Home";
 
 export default function Home() {
-  const [filters, setFilters] = useState({
-    color: null,
-    genre: null,
-    price: null,
-    availability: null,
-    sort: null,
-  });
+
 
   return (
-    <div className="flex w-[80%] justify-center items-center flex-col">
-      <Filter filters={filters} setFilters={setFilters} />
-      <Bookstore filters={filters} />
-    </div>
+    <div className="flex flex-col justify-center items-center w-full">
+      <img src="/assets/BannersAfrican_authors.webp" className="w-full" alt="" />
+      <Landing />
+      <img src="/assets/BannersChildrens.webp" className="w-full mt-12" alt="" />
+      </div>
   );
 }

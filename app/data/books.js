@@ -44,7 +44,7 @@ const books = [
     },
     {
         id: 5,
-        title: "The Catcher in the Rye",
+        title: "The Catcher in the Rye, The fairytales of the world",
         price: "$13.99",
         colors: ["Yellow", "Red"],
         categories: ["Classic", "Fiction"],
