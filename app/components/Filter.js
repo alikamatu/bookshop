@@ -55,7 +55,7 @@ export default function Filter({ filters, setFilters }) {
 
     return (
         <div className="w-full">
-            <div className="flex justify-between items-center px-7 py-4 bg-white my-8">
+            <div className="flex justify-between items-center px-7 py-4 bg-white my-3 md:my-8">
                 <div className="hidden md:flex gap-3">
                     <span>Filter:</span>
                     <div className="relative" ref={colorRef}>
