@@ -81,7 +81,6 @@ export default function Bookstore({ filters }) {
                         className="flex flex-col items-center justify-between bg-[#731212] text-white border rounded-lg shadow-md w-[195px] md:w-[270px] p-[1px]"
                         onMouseEnter={() => setHoveredBookIndex(index)}
                         onMouseLeave={() => setHoveredBookIndex(null)}
-                        onClick={() => handleBookClick(book)}
                     >
                         <div className="flex flex-col items-center w-full">
                             <img
@@ -93,7 +92,7 @@ export default function Bookstore({ filters }) {
                             <p className="mb-2">{book.price}</p>
                         </div>
                         <div className="flex w-full justify-center items-center">
-                            <button className="border-4 border-white w-full mt-4 mb-3 mx-3 py-2 rounded-xl">Add to cart</button>
+                            <button onClick={() => handleBookClick(book)} className="border-4 border-white w-full mt-4 mb-3 mx-3 py-2 rounded-xl">Add to cart</button>
                         </div>
                     </div>
                 ))}
